@@ -1,0 +1,172 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+  }
+  body{
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .father{
+    display:flex;
+    flex-flow:column nowrap;
+  }
+  .header{
+    display:flex;
+    flex-flow:column nowrap;
+    background:#15192A; 
+    position:fixed;
+    width: 100%;
+  }
+  .menu{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-around;
+    height:125px;
+    align-items:center;
+    
+  }
+  .logo{
+   flex:0.7 0 0;
+  }
+  #search{
+  flex:0 0 auto;
+  margin:5px;
+  }
+  #search input{
+    border-radius:5px;
+    background-color:whitesmoke; 
+  } 
+  #search i{
+  color:whitesmoke;
+  margin:5px;
+  }
+  #homePage{
+    background:url(img/fondo-pokemon.jpg);
+    background-position:center;
+    background-attachment:contain;
+    background-size:cover;
+    height:750px;
+  }
+  .mainText{
+   display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:center;
+    padding:150px 0 0 0;
+  }
+  h1{
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 60px;
+  text-align: center;
+  color: #FFFFFF;
+  }
+  .welcomeImg{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:flex-start;
+    align-content:flex-start;
+    
+  }
+  .welcomeImg img{
+    flex:0 0 auto;
+    width: 390px;
+    }
+  .secondaryText{
+    display:flex;
+    justify-content:space-around;
+    align-content:center;
+    padding:20px;
+  }
+  p{
+  flex: 0.5 1 auto;
+  color:white;
+  background-color:rgba(21, 25, 42, 0.322);
+  border-radius: 30px;
+  width:0;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 40px;
+  text-align: center;
+  }
+  
+  /*Pantalla 2*/
+  .btn{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:center;
+  }
+  
+  #start{
+    align-self:center;
+    text-decoration:none;
+    background:#15192A; 
+    color:white;
+    border: 1px solid #15192A; 
+    border-radius: 100px;
+    padding:15px;
+  }
+  
+  #pokedex{
+    background-color:whitesmoke;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    height:750px;
+  }
+  #pokeFilters{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    background-color:whitesmoke;
+    margin:120px 60px 0 60px;
+   }
+  #titlePokedex{
+    background-color:whitesmoke;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+  }
+  #titlePokedex h1{
+    color:#15192A;  
+  }
+  .filter{
+  font-family: 'Quicksand', sans-serif;
+  font-size:15px;
+  background-color:#15192A; 
+  color:white;
+  border-radius:5px;
+  padding:10px;
+  margin:0 0 10px 0;
+  }
+  
+  option{
+    background-color:#5D6379;
+  }
+  
+  footer{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    background:#15192A; 
+  }
+  
+  .foot{
+    background:green;
+    width:300px;
+    justify-content:space-between;
+  }
+  @media all and (max-width: 800px){
+    .menu{
+      flex-direction:column;
+      height:auto;
+    }
+  }
