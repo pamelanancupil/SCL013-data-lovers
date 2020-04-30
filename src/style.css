@@ -120,7 +120,7 @@
     display:flex;
     flex-direction:row;
     flex-wrap:nowrap;
-    height:750px;
+    height:auto;
   }
   #pokeFilters{
     display:flex;
@@ -151,6 +151,50 @@
   option{
     background-color:#5D6379;
   }
+
+  /*CAJA QUE RECIBE A LOS POKEMON*/
+#box{
+  display: flex;
+  justify-content:space-evenly;
+  flex-wrap:wrap;
+  margin:120px 60px 0 60px;
+  }
+  
+  .card{
+  width: 236px;
+  height: 320px;
+  background:#FFFFFF;
+  border: 6px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+  border-radius: 26px;
+  float: left ;
+  margin:15px;
+  }
+  
+  .card h3{
+  color:white;
+  text-align:center;
+  width: 98px;
+  height: 53.91px;
+  background: #15192A;
+  border: 6px solid #15192A;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin:0 60px;
+  }
+  .card img{
+    margin:12px 52px;
+  }
+  
+  .card p{
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+  margin:0 60px 0 60px;
+  }
+  /*FIN CAJA*/
   
   footer{
     display:flex;
@@ -168,5 +212,8 @@
     .menu{
       flex-direction:column;
       height:auto;
+    }
+    #box .card{
+      flex-direction:column;
     }
   }
