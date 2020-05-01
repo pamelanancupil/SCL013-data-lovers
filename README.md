@@ -11,7 +11,7 @@
 
 ***
 
-## 1.Definición del producto
+## 1. Definición del producto
 
 Pokémon GO es un sitio web inspirado en el juego del mismo nombre, el cual ayudará a los jugadores a encontrar información relevante sobre los Pokémon y así poder progresar en su juego. 
 El sitio web esta enfocado principalmente a personas que tengan un conocimiento previo de la aplicación y los términos de esta.
