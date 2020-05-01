@@ -34,8 +34,7 @@ Se realizaron entrevistas a diferentes jugadores, y surgieron las siguientes His
 
 Se realizaron bocetos en papel, para luego testearlo con usuarios.
 
-* Prototipo de baja fidelidad 
-http://imgfz.com/i/fns6CZM.jpeg
+![Prototipo](http://imgfz.com/i/fns6CZM.jpeg)
 
 [Interacción en InVision](https://pamela319941.invisionapp.com/console/Data-Lovers-ck9akixf80mx1019mvda5v65j/ck9akjd602khx01b9dpxiu5q1/play)
 
@@ -43,11 +42,10 @@ http://imgfz.com/i/fns6CZM.jpeg
 
 Tras haber testeado con usuarios, estos sugirieron algunas modificaciones las cuales fueron incorporadas en un nuevo prototipo de alta fidelidad.
 
-* Protiotipo de alta fidelidad
-http://imgfz.com/i/IWSkA6G.jpeg
-http://imgfz.com/i/3cXAGLw.jpeg
-http://imgfz.com/i/E60nRYq.jpeg
-http://imgfz.com/i/SItpsXg.jpeg
+![Prototipo1](http://imgfz.com/i/IWSkA6G.jpeg)
+![Prototipo2](http://imgfz.com/i/3cXAGLw.jpeg)
+![Prototipo3](http://imgfz.com/i/E60nRYq.jpeg)
+![Prototipo4](http://imgfz.com/i/SItpsXg.jpeg)
 
 ## 4. Decisiones de diseño
 
