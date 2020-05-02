@@ -84,7 +84,7 @@
     align-content:center;
     padding:20px;
   }
-  p{
+  .secondaryText p{
   flex: 0.5 1 auto;
   color:white;
   background-color:rgba(21, 25, 42, 0.322);
@@ -248,7 +248,7 @@
     .welcomeImg img{
     width: 350px;
     }
-    p{
+    .secondaryText p{
     font-size: 20px;
     }
   #box .card{
@@ -261,25 +261,102 @@
       flex-direction:column;
       height:auto;
     }
+    #pokedex{
+      display:block;
+    }
     h1{
       font-size: 28px;
     }
     .welcomeImg img{
     width: 350px;
     }
-    p{
+    .secondaryText p{
     font-size: 20px;
+    width:130px;
+    }
+    .filter{
+      width:110px;
+      font-size:14px;
     }
     #pokeFilters{
-    width: 100%;
-    flex: 1 1 auto;
-    display:flex;
+    width: auto;
+    display:block;
+    flex-direction:row;
     }
     #box{
+    margin:auto;
     width:100%;
-    display:flex;
     }
-    #box .card{
+  }
+  
+  @media screen and (max-width: 480px){
+    .menu{
       flex-direction:column;
+      height:auto;
+    }
+    #pokedex{
+      display:block;
+    }
+    h1{
+      font-size: 28px;
+    }
+    .welcomeImg img{
+    width: 350px;
+    }
+    .secondaryText p{
+    font-size: 20px;
+    width:176px;
+    }
+    .filter{
+      width:102px;
+      font-size:12px;
+    }
+    #pokeFilters{
+      width: auto;
+      display:block;
+      flex-direction:row;
+      margin:120px 15px 0 22px;
+    }
+    #box{
+      margin:auto;
+      width:100%;
+    }
+  }
+  
+  @media screen and (max-width: 360px){
+    .menu{
+      flex-direction:column;
+      height:auto;
+    }
+    #pokedex{
+      display:block;
+    }
+    h1{
+      font-size: 26px;
+    }
+    .welcomeImg img{
+    width: 250px;
+    }
+    .secondaryText p{
+    font-size: 18px;
+    width:176px;
+    line-height: 28px;
+    }
+    .filter{
+      width:110px;
+      font-size:12px;
+    }
+    #pokeFilters{
+      width: auto;
+      display:block;
+      flex-direction:row;
+      margin: 120px 15px 0 65px;
+    }
+  #titlePokedex h1{
+    margin: 0 28px 0 0;
+  }
+    #box{
+      margin:auto;
+      width:100%;
     }
   }
