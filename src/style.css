@@ -14,7 +14,7 @@
   .header{
     display:flex;
     flex-flow:column nowrap;
-    background:#15192A; 
+    background:rgba(21, 25, 42, 0.75); 
     position:fixed;
     width: 100%;
   }
@@ -96,8 +96,14 @@
   line-height: 40px;
   text-align: center;
   }
-  
-  /*Pantalla 2*/
+  /*Arregloboton*/
+a:link{
+  text-decoration:none;
+}
+a{
+  color:white;
+}
+
   .btn{
     display:flex;
     flex-direction:row;
@@ -109,12 +115,15 @@
     align-self:center;
     text-decoration:none;
     background:#15192A; 
-    color:white;
-    border: 1px solid #15192A; 
+    border: 0 solid #15192A; 
     border-radius: 100px;
     padding:15px;
   }
-  
+  #start:hover{
+    background: linear-gradient(90.3deg, #A2DB96 0.11%, #24CCA9 99.93%);
+    transition: .2s ease;
+}
+  /*Pantalla Pokédex*/
   #pokedex{
     background-color:whitesmoke;
     display:flex;
@@ -161,30 +170,31 @@
   }
   
   .card{
-  width: 236px;
-  height: 320px;
+  width: 176px;
+  height: 266px;
   background:#FFFFFF;
   border: 6px solid #FFFFFF;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
   border-radius: 26px;
   float: left ;
-  margin:15px;
+  margin:22px;
   }
   
   .card h3{
   color:white;
   text-align:center;
-  width: 98px;
-  height: 53.91px;
+  width: 79px;
+  height: 37px;
   background: #15192A;
   border: 6px solid #15192A;
   box-sizing: border-box;
   border-radius: 15px;
-  margin:0 60px;
+  margin:auto;
   }
   .card img{
-    margin:12px 52px;
+    margin:10px 20px;
+    width:70%;
   }
   
   .card p{
@@ -192,7 +202,7 @@
   font-size: 20px;
   line-height: 25px;
   color: #000000;
-  margin:0 60px 0 60px;
+  margin:0 27px;
   }
   /*FIN CAJA*/
   
@@ -208,10 +218,28 @@
     width:300px;
     justify-content:space-between;
   }
-  @media all and (max-width: 800px){
+  @media screen and (max-width: 600px){
     .menu{
       flex-direction:column;
       height:auto;
+    }
+    h1{
+      font-size: 28px;
+    }
+    .welcomeImg img{
+    width: 350px;
+    }
+    p{
+    font-size: 20px;
+    }
+    #pokeFilters{
+    width: 100%;
+    flex: 1 1 auto;
+    display:flex;
+    }
+    #box{
+    width:100%;
+    display:flex;
     }
     #box .card{
       flex-direction:column;
