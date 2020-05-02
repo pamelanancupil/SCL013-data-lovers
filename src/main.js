@@ -7,6 +7,16 @@ console.log(example, data);*/
 import data from './data/pokemon/pokemon.js';
 import { filterData } from './data.js';
 
+/*BOTÓN COMENZAR*/ 
+document.getElementById("start").addEventListener("click", ()=>{
+    document.getElementById("homePage").style.display="none";
+    document.getElementById("pokedex").style.display="flex";
+    });
+  document.getElementById("logoHeader").addEventListener("click", ()=>{
+    document.getElementById("homePage").style.display="block";
+    document.getElementById("pokedex").style.display="flex";
+  });
+
 /*PRUEBA 01*/ 
 const container = document.getElementById("box");
 

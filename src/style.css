@@ -28,6 +28,7 @@
   }
   .logo{
    flex:0.7 0 0;
+   cursor:pointer;
   }
   #search{
   flex:0 0 auto;
@@ -97,12 +98,12 @@
   text-align: center;
   }
   /*Arregloboton*/
-a:link{
-  text-decoration:none;
-}
-a{
-  color:white;
-}
+  .btn button:link{
+    text-decoration:none;
+  }
+  .btn button{
+    color:white;
+  }
 
   .btn{
     display:flex;
@@ -115,9 +116,10 @@ a{
     align-self:center;
     text-decoration:none;
     background:#15192A; 
-    border: 0 solid #15192A; 
+    border: none; 
     border-radius: 100px;
     padding:15px;
+    cursor:pointer;
   }
   #start:hover{
     background: linear-gradient(90.3deg, #A2DB96 0.11%, #24CCA9 99.93%);
@@ -130,6 +132,7 @@ a{
     flex-direction:row;
     flex-wrap:nowrap;
     height:auto;
+    width: auto;
   }
   #pokeFilters{
     display:flex;
@@ -137,6 +140,7 @@ a{
     flex-wrap:wrap;
     background-color:whitesmoke;
     margin:120px 60px 0 60px;
+    width: auto;
    }
   #titlePokedex{
     background-color:whitesmoke;
@@ -145,8 +149,15 @@ a{
     flex-wrap:wrap;
   }
   #titlePokedex h1{
-    color:#15192A;  
+    color:#15192A;
+    font-size:24px;/*cambio*/
+    cursor:pointer;  
   }
+  /*cambio hover titulo pokedex*/
+#titlePokedex h1:hover{
+    font-size:26px;/*cambio*/
+    transition: .2s ease;
+}
   .filter{
   font-family: 'Quicksand', sans-serif;
   font-size:15px;
@@ -155,8 +166,14 @@ a{
   border-radius:5px;
   padding:10px;
   margin:0 0 10px 0;
+  border:none;
+  cursor:pointer;
   }
-  
+  .filter:hover{
+    background: linear-gradient(90.3deg, #A2DB96 0.11%, #24CCA9 99.93%);
+    transition: .2s ease;
+}
+
   option{
     background-color:#5D6379;
   }
@@ -179,6 +196,7 @@ a{
   border-radius: 26px;
   float: left ;
   margin:22px;
+  cursor:pointer;
   }
   
   .card h3{
@@ -218,6 +236,26 @@ a{
     width:300px;
     justify-content:space-between;
   }
+
+  @media screen and (max-width: 840px){
+    .menu{
+      flex-direction:column;
+      height:auto;
+    }
+    h1{
+      font-size: 28px;
+    }
+    .welcomeImg img{
+    width: 350px;
+    }
+    p{
+    font-size: 20px;
+    }
+  #box .card{
+      flex-direction:column;
+    }
+  }
+  
   @media screen and (max-width: 600px){
     .menu{
       flex-direction:column;
