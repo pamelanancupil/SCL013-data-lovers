@@ -1,11 +1,17 @@
-// estas funciones son de ejemplo
+// FUNCIÓN FILTRAR POR TIPO DE POKÉMON
+import pokeData from './data/pokemon/pokemon.js';
 
-/*export const example = () => {
-  return 'example';
+export const filterData=(pokeData, pokeFilter )=> {
+  const result = pokeData.filter((pokemon) => {
+    return pokemon.type.includes(pokeFilter);
+  });
+  return result;
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};*/
-export const filterData=(data, condition )=> {
-}
+// FUNCIÓN FILTRAR POR HUEVOS
+export const filterEgg = (pokeData,pokeFilter) => {
+  const result = pokeData.filter((pokemon) => {
+    return pokemon.egg.includes(pokeFilter);
+  });
+  return result;
+};
