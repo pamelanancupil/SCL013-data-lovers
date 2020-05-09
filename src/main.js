@@ -1,7 +1,9 @@
 import data from './data/pokemon/pokemon.js';
 import { 
-  filterData,
-  filterEgg } from './data.js';
+filterType,
+filterEgg, 
+filterCandy,
+searchPoke,} from './data.js';
 
 /*BOTÓN COMENZAR*/ 
 document.getElementById("start").addEventListener("click", ()=>{
@@ -31,7 +33,7 @@ select.addEventListener('change', () => {
     console.log("1",pokeFilter)
   }
   else{
-    pokeByType= filterData(pokeData,pokeFilter);
+    pokeByType= filterType(pokeData,pokeFilter);
      console.log("2",pokeFilter)
      console.log("3",pokeByType)
 
@@ -66,5 +68,42 @@ selectedEgg.addEventListener('change', () => {
                       <p><strong>${pokeByEgg[i].name}</strong></p>
                       <p>${pokeByEgg[i].egg}</p></div>`;
                       }
+  }
+});
+
+// FUNCIÓN FILTRAR POR CARAMELOS
+const selectedCandy = document.getElementById('selectPokeCandy');
+selectedCandy.addEventListener('change', () => {
+  document.getElementById('box').innerHTML = '';
+  const pokeFilter = selectPokeCandy.options[selectPokeCandy.selectedIndex].value;
+  let pokeByCandy = '';
+  if(pokeFilter === ''){
+    pokeByCandy = pokeData;
+  }
+  else{
+    pokeByCandy = (filterCandy(pokeData,pokeFilter));
+  for (let i = 0; i < pokeByCandy.length; i++) {
+    document.getElementById('box').innerHTML += 
+    `<div class="card"><h3 class="pokeNumber">${pokeByCandy[i].num}</h3>
+                      <img src="${pokeByCandy[i].img}">
+                      <p>${pokeByCandy[i].name}</p>
+                      <p>${pokeByCandy[i].candy_count}</p></div>`;
+                      }
+  }
+});
+
+
+/*FUNCION BUSCAR POKÉMON POR NOMBRE*/
+document.getElementById('searchPoke').addEventListener('click', () => {
+  document.getElementById('box').innerHTML = '';
+  const pokeName = document.getElementById('searchBar').value;
+  const textPokeName = pokeName.charAt(0).toUpperCase() + pokeName.slice(1).toLowerCase();
+  let insertName = searchPoke(pokeData,textPokeName);
+  for (let i = 0; i < insertName.length; i++){
+     document.getElementById('box').innerHTML += 
+    `<div class="card"><h3 class="pokeNumber">${insertName[i].num}</h3>
+                      <img src="${insertName[i].img}">
+                      <p class="pokeName">${insertName[i].name}</p</div>`;
+                      
   }
 });
