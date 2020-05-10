@@ -1,5 +1,5 @@
 // FUNCIÓN FILTRAR POR TIPO DE POKÉMON
-import pokeData from './data/pokemon/pokemon.js';
+//import pokeData from './data/pokemon/pokemon.js';
 
 export const filterType=(pokeData, pokeFilter )=> {
   const result = pokeData.filter((pokemon) => {

@@ -32,7 +32,7 @@ for(let i=0; i<pokeData.length;i++){
 //MODAL POKÉMON
 function pokeModal(){
   let backgroundPokeModal= document.getElementById("backgroundModal");
-  let contentPokeModal=document.getElementById("contentModal");
+  //let contentPokeModal= document.getElementById("contentModal");
   let clickPokeImg = document.getElementsByClassName("clickImg");
   
   backgroundPokeModal.style.display="none";
@@ -94,23 +94,23 @@ function pokeModal(){
   contentPokeModal.innerHTML="";
   });
   });
-  };
-  };
+  }
+  }
 
 // FUNCIÓN FILTRAR POR TIPO DE POKÉMON
 const select = document.getElementById('selectPokeType');
 select.addEventListener('change', () => {
   document.getElementById('box').innerHTML = '';
-  const pokeFilter = selectPokeType.options[selectPokeType.selectedIndex].value;
+  const pokeFilter = select.options[select.selectedIndex].value;
   let pokeByType = '';
   if(pokeFilter === ''){
     pokeByType = pokeData;
-    console.log("1",pokeFilter)
+    //console.log("1",pokeFilter)
   }
   else{
     pokeByType= filterType(pokeData,pokeFilter);
-     console.log("2",pokeFilter)
-     console.log("3",pokeByType)
+     //console.log("2",pokeFilter)
+     //console.log("3",pokeByType)
 
   for (let i = 0; i < pokeByType.length; i++) {
     document.getElementById('box').innerHTML += 
@@ -127,16 +127,16 @@ select.addEventListener('change', () => {
 const selectedEgg = document.getElementById('selectPokeEgg');
 selectedEgg.addEventListener('change', () => {
   document.getElementById('box').innerHTML = '';
-  const pokeFilter = selectPokeEgg.options[selectPokeEgg.selectedIndex].value;
+  const pokeFilter = selectedEgg.options[selectedEgg.selectedIndex].value;
   let pokeByEgg = '';
   if(pokeFilter === ''){
     pokeByEgg = pokeData;
-    console.log("1",pokeFilter)
+    //console.log("1",pokeFilter)
   }
   else{
     pokeByEgg = (filterEgg(pokeData,pokeFilter));
-     console.log("2",pokeFilter)
-      console.log("3",pokeByEgg)
+    //console.log("2",pokeFilter)
+    //console.log("3",pokeByEgg)
   for (let i = 0; i < pokeByEgg.length; i++) {
     document.getElementById('box').innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByEgg[i].num}</h3>
@@ -152,7 +152,7 @@ selectedEgg.addEventListener('change', () => {
 const selectedCandy = document.getElementById('selectPokeCandy');
 selectedCandy.addEventListener('change', () => {
   document.getElementById('box').innerHTML = '';
-  const pokeFilter = selectPokeCandy.options[selectPokeCandy.selectedIndex].value;
+  const pokeFilter = selectedCandy.options[selectedCandy.selectedIndex].value;
   let pokeByCandy = '';
   if(pokeFilter === ''){
     pokeByCandy = pokeData;
@@ -185,9 +185,9 @@ function showSelect (){
     <p><strong>${finalSortHeight[i].name}</strong></p>
     <p>${finalSortHeight[i].height}</p></div>`;
   }
-};
+}
 
-//FUNCION BUSCAR POKÉMON POR NOMBRE
+//FUNCIÓN BUSCAR POKÉMON POR NOMBRE
 document.getElementById('searchPoke').addEventListener('click', () => {
   document.getElementById('box').innerHTML = '';
   const pokeName = document.getElementById('searchBar').value;
