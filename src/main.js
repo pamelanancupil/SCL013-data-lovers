@@ -3,9 +3,10 @@ import {
 filterType,
 filterEgg, 
 filterCandy,
-searchPoke,} from './data.js';
+searchPoke,
+sortHeight } from './data.js';
 
-/*BOTÓN COMENZAR*/ 
+//BOTÓN COMENZAR
 document.getElementById("start").addEventListener("click", ()=>{
     document.getElementById("homePage").style.display="none";
     });
@@ -18,7 +19,7 @@ document.getElementById("refresh").addEventListener("click", ()=>{
   location.reload();
  });  
 
-/*DATA INICIAL*/ 
+//DATA INICIAL
 const container = document.getElementById("box");
 let pokeData = data.pokemon;
 for(let i=0; i<pokeData.length;i++){
@@ -28,7 +29,7 @@ for(let i=0; i<pokeData.length;i++){
                         pokeModal();
   }
 
-/*MODAL POKÉMON*/
+//MODAL POKÉMON
 function pokeModal(){
   let backgroundPokeModal= document.getElementById("backgroundModal");
   let contentPokeModal=document.getElementById("contentModal");
@@ -169,8 +170,24 @@ selectedCandy.addEventListener('change', () => {
   }
 });
 
+// FUNCIÓN ORDENAR POR TAMAÑO
+const pokeNumbers = document.getElementById ('selectPokeHeight');
+pokeNumbers.addEventListener ('change', showSelect);
+function showSelect (){
+  const pokeValueHeight = document.getElementById ('selectPokeHeight').value;
+  const finalSortHeight = sortHeight(pokeData, 'height', pokeValueHeight);
+  document.getElementById('box').innerHTML = '';
+  for (let i = 0; i < finalSortHeight.length; i++) {
+    document.getElementById('box').innerHTML += 
+    `<div class="card">
+    <h3 class="pokeNumber">${finalSortHeight[i].num}</h3>
+    <img src="${finalSortHeight[i].img}">
+    <p><strong>${finalSortHeight[i].name}</strong></p>
+    <p>${finalSortHeight[i].height}</p></div>`;
+  }
+};
 
-/*FUNCION BUSCAR POKÉMON POR NOMBRE*/
+//FUNCION BUSCAR POKÉMON POR NOMBRE
 document.getElementById('searchPoke').addEventListener('click', () => {
   document.getElementById('box').innerHTML = '';
   const pokeName = document.getElementById('searchBar').value;
