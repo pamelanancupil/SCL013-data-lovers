@@ -18,7 +18,7 @@
       <img id="logoHeader" src="img/logo.png" width="150px">
     </div>
     <div id="search">
-      <input type="text" id="searchBar">
+      <input type="text" id="searchBar" placeholder="Busca a tu Pokémon">
      <i id="searchPoke" class="fas fa-search"></i>
     </div>
     </div>
@@ -42,7 +42,7 @@
 <aside id="pokeFilters">
 
   <div id="titlePokedex">
-  <h1><img src="img/pokedex.png" width="10px"> POKÉDEX</h1>
+  <h1 id="refresh"><img src="img/pokedex.png" width="10px"> POKÉDEX</h1>
 </div>
 
   <select class="filter" id="selectPokeType">
@@ -80,15 +80,17 @@
   <option value="400">400</option>
 </select>
 
-<select class="filter">
-  <option value="tamaños"selected>Tamaños</option>
-  <option value="mayorAMenor">Mayor a menor</option>
-  <option value="menorAMayor">Menor a mayor</option>
+<select class="filter" id="selectPokeHeight">
+  <option value="altura"selected>Altura</option>
+  <option value="mayorAMenor">Menor a mayor</option>
+  <option value="menorAMayor">Mayor a menor</option>
 </select>
 
 </aside>
 <!--INICIO IMPRESION POKEMON EN LA PANTALLA-->
 <div id="box"></div>
+<div id="contentModal" class="contentModal"></div>
+<div id="backgroundModal" class="backgroundModal"></div>
 <!--FIN-->
 </section>
 

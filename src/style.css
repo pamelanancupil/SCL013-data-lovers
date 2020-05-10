@@ -36,7 +36,10 @@
   }
   #search input{
     border-radius:5px;
-    background-color:whitesmoke; 
+    background-color:whitesmoke;
+    height:28px;
+    font-size:14px;
+    width: 180px;
   } 
   #search i{
   color:whitesmoke;
@@ -150,12 +153,12 @@
   }
   #titlePokedex h1{
     color:#15192A;
-    font-size:24px;/*cambio*/
+    font-size:24px;
     cursor:pointer;  
   }
-  /*cambio hover titulo pokedex*/
+  
 #titlePokedex h1:hover{
-    font-size:26px;/*cambio*/
+    font-size:26px;
     transition: .2s ease;
 }
   .filter{
@@ -198,32 +201,168 @@
   margin:22px;
   cursor:pointer;
   }
+
+  .pokeNumber{
+    color:white;
+    text-align:center;
+    width: 79px;
+    height: 37px;
+    background: #15192A;
+    border: 6px solid #15192A;
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin:auto;
+    }
   
-  .card h3{
-  color:white;
-  text-align:center;
-  width: 79px;
-  height: 37px;
-  background: #15192A;
-  border: 6px solid #15192A;
-  box-sizing: border-box;
-  border-radius: 15px;
-  margin:auto;
-  }
   .card img{
     margin:10px 20px;
     width:70%;
   }
   
-  .card p{
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 25px;
-  color: #000000;
-  margin:0 27px;
-  }
+  .pokeName{
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+    margin:0 27px;
+    font-weight:bold;
+    }
+
+    p{
+      font-weight: 500;
+      text-align:center;
+      font-size: 20px;
+      line-height: 25px;
+      color: #000000;
+      margin:0 27px;
+      }    
   /*FIN CAJA*/
   
+/*MODAL*/
+.backgroundModal{
+  background:rgba(0,0,0,0.5);
+  position:fixed;
+  z-index: 1;
+  overflow: auto;
+  top: 0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.cardModal{
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  background:white;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+   border-radius:15px;
+   padding:16px;
+   text-align:center;
+   width: 325px;
+   margin:120px auto;
+}
+
+.closeCard{
+ display:flex;
+ color:#15192A;
+ font-size:25px;
+ float:right;
+ cursor:pointer;
+}
+
+.firstInfo{
+flex-direction:column;
+}
+
+.firstInfo p{
+color:#15192A;
+}
+
+.frontLine{
+ display:inline-flex;
+ flex-wrap:wrap;
+ justify-content:space-between;
+ width: 100%;
+ margin:12px auto;
+ }
+
+.frontLine  p{
+flex-direction:row;
+justify-content:center;
+color:#15192A;
+font-size: medium;
+padding:10px;
+margin: auto;
+line-height:20px;
+}
+
+.vertical-line{
+display:block;
+width: 0.25px;
+background-color: #15192A;
+height: 45px;
+position:relative;
+opacity:50%;
+}
+
+.horizontal-line{
+height: 0.25px;
+background-color: #15192A;
+opacity:50%;
+}
+
+.secondLine{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:space-around;
+ width: 100%;
+ margin:5px auto 0;
+}
+
+.secondLine p{
+flex-direction:row;
+justify-content:center;
+color:#15192A;
+font-size: medium;
+padding:10px;
+margin: auto;
+line-height:20px;
+}
+
+.thirdLine{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:space-around;
+ width: 100%;
+}
+
+.thirdLine p{
+flex-direction:row;
+justify-content:center;
+color:#15192A;
+font-size: medium;
+padding:10px;
+margin: auto;
+line-height:22px;
+}
+
+.btnOk{
+  text-decoration:none;
+   background:#15192A; 
+   color:white;
+   border: none; 
+   border-radius: 100px;
+   padding:5px;
+   width: 81px;
+   margin: 12px auto 28px;
+   cursor:pointer;
+}
+
+.btnOk:hover{
+   background: linear-gradient(90.3deg, #A2DB96 0.11%, #24CCA9 99.93%);
+   transition: .2s ease;
+}
+
   footer{
     display:flex;
     flex-direction:column;
@@ -237,7 +376,7 @@
     justify-content:space-between;
   }
 
-  @media screen and (max-width: 840px){
+@media screen and (max-width: 840px){
     .menu{
       flex-direction:column;
       height:auto;
@@ -256,7 +395,7 @@
     }
   }
   
-  @media screen and (max-width: 600px){
+@media screen and (max-width: 600px){
     .menu{
       flex-direction:column;
       height:auto;
@@ -289,7 +428,7 @@
     }
   }
   
-  @media screen and (max-width: 480px){
+@media screen and (max-width: 480px){
     .menu{
       flex-direction:column;
       height:auto;
@@ -323,7 +462,7 @@
     }
   }
   
-  @media screen and (max-width: 360px){
+@media screen and (max-width: 360px){
     .menu{
       flex-direction:column;
       height:auto;
@@ -359,4 +498,31 @@
       margin:auto;
       width:100%;
     }
+
+  .cardModal{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    background:white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+    border-radius:15px;
+    padding:16px;
+    text-align:center;
+    width: 280px;
+    margin:120px auto;
+   }
+   
+   .frontLine  p{
+   font-size: small;
+   line-height:15px;
+   }
+   .secondLine  p{
+   font-size: small;
+   line-height:15px;
+   }
+   .thirdLine  p{
+   font-size: small;
+   line-height:15px;
+   }
+    
   }
