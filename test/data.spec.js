@@ -1,17 +1,18 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterType, anotherExample } from '../src/data.js';
+//import pokeData from './data/pokemon/pokemon.js';
 
-
-describe('example', () => {
+describe('filterType', () => {
+  
   test('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterType).toBe('function');
   });
 
-  test('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
+      test('should return data´s Bulbasaur for filter "Grass"', () => {
+        expect(filterType(pokeData,'Grass')).toBe('OMG');
+      });
+    });
 
-
+    
 describe('anotherExample', () => {
   test('is a function', () => {
     expect(typeof anotherExample).toBe('function');

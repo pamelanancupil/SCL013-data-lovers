@@ -21,16 +21,16 @@ document.getElementById("refresh").addEventListener("click", ()=>{
 
 //DATA INICIAL
 const container = document.getElementById("box");
-let pokeData = data.pokemon;
+const pokeData = data.pokemon;
 for(let i=0; i<pokeData.length;i++){
   container.innerHTML +=`<div class="card"><h3 class="pokeNumber">${pokeData[i].num}</h3>
                         <img src="${pokeData[i].img}" class="clickImg">
                         <p class="pokeName">${pokeData[i].name}</p></div>`;
-                        pokeModal();
+                        pokeModal(pokeData);
   }
 
 //MODAL POKÉMON
-function pokeModal(){
+function pokeModal(pokeData){
   let backgroundPokeModal= document.getElementById("backgroundModal");
   //let contentPokeModal= document.getElementById("contentModal");
   let clickPokeImg = document.getElementsByClassName("clickImg");
@@ -39,9 +39,10 @@ function pokeModal(){
   
   for(let i=0; i<clickPokeImg.length; i++){
   let pokeImg = clickPokeImg[i];
-  
+  //let evolution = pokeData[i].next_evolution[i].name;
   pokeImg.addEventListener("click",() =>{
   let contentPokeModal= document.getElementById("backgroundModal");
+  contentPokeModal.innerHTML="";
   backgroundPokeModal.style.display="block";
   
   contentPokeModal.innerHTML += 
@@ -68,12 +69,12 @@ function pokeModal(){
   
   <div class="secondLine">
   <div class= "eggDesign"><p class="egg"><img src="img/egg.png" width="15px"><strong> ${pokeData[i].egg}</strong><br>Huevos</p></div>
-  <div class= "candyDesign"><p class="candyCount"><strong><img src="img/candy.png" width="15px"> ${pokeData[i].candy_count}</strong><br>${pokeData[i].candy}</p>
+  <div class= "candyDesign"><p class="candyCount"><strong><img src="img/candy.png" width="15px"> ${pokeData[i].candy_count ? pokeData[i].candy_count : "Máx.Evolución" }</strong><br>${pokeData[i].candy}</p>
   </div>
   </div>
   
   <div class="thirdLine">
-  <p class="evolution"><strong>${pokeData[i].next_evolution[0].name}</strong><br>Evolución</p>
+  <p class="evolution"><strong>${pokeData[i].next_evolution ? pokeData[i].next_evolution[0].name : "Sin más"}</strong><br>Evolución</p>
   <p class="weaknesses"><strong>${pokeData[i].weaknesses}</strong><br>Debilidades</p>
   </div>
   
@@ -105,12 +106,9 @@ select.addEventListener('change', () => {
   let pokeByType = '';
   if(pokeFilter === ''){
     pokeByType = pokeData;
-    //console.log("1",pokeFilter)
   }
   else{
     pokeByType= filterType(pokeData,pokeFilter);
-     //console.log("2",pokeFilter)
-     //console.log("3",pokeByType)
 
   for (let i = 0; i < pokeByType.length; i++) {
     document.getElementById('box').innerHTML += 
@@ -118,7 +116,7 @@ select.addEventListener('change', () => {
                       <img src="${pokeByType[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByType[i].name}</p>
                       <p>${pokeByType[i].type}</p></div>`;
-                      pokeModal();
+                      pokeModal(pokeByType);
                       }
   }
 });
@@ -131,19 +129,16 @@ selectedEgg.addEventListener('change', () => {
   let pokeByEgg = '';
   if(pokeFilter === ''){
     pokeByEgg = pokeData;
-    //console.log("1",pokeFilter)
   }
   else{
     pokeByEgg = (filterEgg(pokeData,pokeFilter));
-    //console.log("2",pokeFilter)
-    //console.log("3",pokeByEgg)
   for (let i = 0; i < pokeByEgg.length; i++) {
     document.getElementById('box').innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByEgg[i].num}</h3>
                       <img src="${pokeByEgg[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByEgg[i].name}</p>
-                      <p>${pokeByEgg[i].egg}</p></div>`;
-                      pokeModal();
+                      <p>${pokeByEgg[i].egg} para incubar</p></div>`;
+                      pokeModal(pokeByEgg);
                       }
   }
 });
@@ -164,16 +159,15 @@ selectedCandy.addEventListener('change', () => {
     `<div class="card"><h3 class="pokeNumber">${pokeByCandy[i].num}</h3>
                       <img src="${pokeByCandy[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByCandy[i].name}</p>
-                      <p>${pokeByCandy[i].candy_count}</p></div>`;
-                      pokeModal();
+                      <p>${pokeByCandy[i].candy_count} para evolucionar</p></div>`;
+                      pokeModal(pokeByCandy);
                       }
   }
 });
 
-// FUNCIÓN ORDENAR POR TAMAÑO
+// FUNCIÓN ORDENAR POR ALTURA
 const pokeNumbers = document.getElementById ('selectPokeHeight');
-pokeNumbers.addEventListener ('change', showSelect);
-function showSelect (){
+pokeNumbers.addEventListener ('change',() => {
   const pokeValueHeight = document.getElementById ('selectPokeHeight').value;
   const finalSortHeight = sortHeight(pokeData, 'height', pokeValueHeight);
   document.getElementById('box').innerHTML = '';
@@ -181,11 +175,12 @@ function showSelect (){
     document.getElementById('box').innerHTML += 
     `<div class="card">
     <h3 class="pokeNumber">${finalSortHeight[i].num}</h3>
-    <img src="${finalSortHeight[i].img}">
+    <img src="${finalSortHeight[i].img}" class="clickImg">
     <p><strong>${finalSortHeight[i].name}</strong></p>
-    <p>${finalSortHeight[i].height}</p></div>`;
+    <p>${finalSortHeight[i].height} de altura</p></div>`;
+    pokeModal(finalSortHeight);
   }
-}
+});
 
 //FUNCIÓN BUSCAR POKÉMON POR NOMBRE
 document.getElementById('searchPoke').addEventListener('click', () => {
@@ -198,7 +193,7 @@ document.getElementById('searchPoke').addEventListener('click', () => {
     `<div class="card"><h3 class="pokeNumber">${insertName[i].num}</h3>
                       <img src="${insertName[i].img}" class="clickImg">
                       <p class="pokeName">${insertName[i].name}</p</div>`;
-                      pokeModal();
+                      pokeModal(insertName);
                       
   }
 });
