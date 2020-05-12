@@ -76,7 +76,7 @@ Tras la realización de estos test se realizó la siguiente lista de problemas p
 
 * [X] Usa VanillaJS.
 * [X] No hace uso de `this`.
-* [ ] Pasa linter (`npm run pretest`)
+* [X] Pasa linter (`npm run pretest`)
 * [ ] Pasa tests (`npm test`)
 * [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.

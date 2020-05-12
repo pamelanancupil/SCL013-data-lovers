@@ -36,13 +36,14 @@ const data = [{
 }]
 
 //FUNCIÓN FILTRAR POR TIPO DE POKÉMON
+
 describe('filterType', () => {
 
 test('is a function', () => {
     expect(typeof filterType).toBe('function');
   });
 
-      test('should return "Grass" for filter "type"', () => {
+      test('should return [["Grass","Poison"],["Grass","Poison"],["Grass","Poison"]] for filter "type"', () => {
         expect(filterType(data,"type")).toEqual([["Grass","Poison"],["Grass","Poison"],["Grass","Poison"]]);
       });
     })
