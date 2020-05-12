@@ -7,7 +7,8 @@
 * [3. Proceso de diseño](#3-proceso-de-diseño)
 * [4. Decisiones de diseño](#4-decisiones-de-diseño)
 * [5. Testeos de usabilidad](#5-testeos-de-usabilidad)
-* [6. Checklist](#6-checklist)
+* [6. Proyecto finalizado](#6-proyecto-finalizado) 
+* [7. Checklist](#7-checklist)
 
 ***
 
@@ -47,6 +48,8 @@ Tras haber testeado con usuarios, estos sugirieron algunas modificaciones las cu
 ![Prototipo3](http://imgfz.com/i/E60nRYq.jpeg)
 ![Prototipo4](http://imgfz.com/i/SItpsXg.jpeg)
 
+[Visita nuestro proyecto en Zeplin](https://scene.zeplin.io/project/5ebb073d13fe1e7925aa5a41)
+
 ## 4. Decisiones de diseño
 
 Con respecto a las decisiones de diseño, se optó por seguir la línea gráfica del juego original de Pokémon GO. En relación a la paleta de colores se decidió incorporar blanco y azul marino, para generar contraste, y para la tipografía, se utilizó "Quicksand" medium, por su legibilidad y por ser amigable a la vista.
@@ -72,7 +75,18 @@ Tras la realización de estos test se realizó la siguiente lista de problemas p
 * Falta un filtro que ayude a ordenar los Pokémones de acuerdo a su tamaño.
 * En las fichas de cada Pokémon el ítem "huevo" debe ir separado de debilidades y resistencia. 
 
-## 6. Checklist
+## 6. Proyecto finalizado
+
+Se implementaron las 6 Historias de usuario al sitio web y además añadimos algunas sugerencias que recibimos durante el proceso, en las siguientes imágenes se muestra el resultado.
+
+![Final1](http://imgfz.com/i/oGKjJhu.jpeg)
+![Final2](http://imgfz.com/i/Sm27eIJ.jpeg)
+![Final3](http://imgfz.com/i/SLdkMwy.jpeg)
+![Responsive1](http://imgfz.com/i/khfFrpd.jpeg)
+![Responsive2](http://imgfz.com/i/WFtP5zq.jpeg)
+![Responsive2](http://imgfz.com/i/d8uBQHW.jpeg)
+
+## 7. Checklist
 
 * [X] Usa VanillaJS.
 * [X] No hace uso de `this`.
@@ -86,7 +100,7 @@ Tras la realización de estos test se realizó la siguiente lista de problemas p
   `README.md`.
 * [X] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
+* [X] Incluye link a Zeplin en `README.md`.
 * [X] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
 * [X] UI: Muestra lista y/o tabla con datos y/o indicadores.
