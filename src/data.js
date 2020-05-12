@@ -17,27 +17,28 @@ export const filterEgg = (pokeData,pokeFilter) => {
 };
 
 //FUNCIÓN FILTRAR CARAMELOS
-export let filterCandy = (pokeData, pokeFilter) => {
+export const filterCandy = (pokeData, pokeFilter) => {
   return pokeData.filter(poke => poke.candy_count == pokeFilter);
 };
 
-//FUNCIÓN ORDENAR POR TAMAÑO
+//FUNCIÓN BUSCAR POKÉMON
+export const searchPoke = (pokeData, textPokeName)=>{
+  const searchFinished = pokeData.filter((pokemon) => {
+  return pokemon.name.includes(textPokeName);
+ });
+ return searchFinished; //Busqueda terminada
+};
+
+//FUNCIÓN ORDENAR POR ALTURA
 export const sortHeight = (pokeData, sortBy, sortOrder) => {
   const compare = pokeData.sort((a,b) => {
    return a[sortBy].localeCompare(b[sortBy]);
  });
- if (sortOrder === 'menorMayor') {
+ if (sortOrder === 'lowHigh') {
    return compare;
  }
- if (sortOrder === 'mayorMenor') {
+ if (sortOrder === 'highLow') {
    return compare.reverse();
  }
 };
 
-//FUNCIÓN BUSCAR POKÉMON
- export const searchPoke = (pokeData, textPokeName)=>{
-   const searchFinished = pokeData.filter((pokemon) => {
-   return pokemon.name.includes(textPokeName);
-  });
-  return searchFinished; //Busqueda terminada
- };

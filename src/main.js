@@ -165,6 +165,22 @@ selectedCandy.addEventListener('change', () => {
   }
 });
 
+//FUNCIÓN BUSCAR POKÉMON POR NOMBRE
+document.getElementById('searchPoke').addEventListener('click', () => {
+  document.getElementById('box').innerHTML = '';
+  const pokeName = document.getElementById('searchBar').value;
+  const textPokeName = pokeName.charAt(0).toUpperCase() + pokeName.slice(1).toLowerCase();
+  let insertName = searchPoke(pokeData,textPokeName);
+  for (let i = 0; i < insertName.length; i++){
+     document.getElementById('box').innerHTML += 
+    `<div class="card"><h3 class="pokeNumber">${insertName[i].num}</h3>
+                      <img src="${insertName[i].img}" class="clickImg">
+                      <p class="pokeName">${insertName[i].name}</p</div>`;
+                      pokeModal(insertName);
+                      
+  }
+});
+
 // FUNCIÓN ORDENAR POR ALTURA
 const pokeNumbers = document.getElementById ('selectPokeHeight');
 pokeNumbers.addEventListener ('change',() => {
@@ -182,18 +198,3 @@ pokeNumbers.addEventListener ('change',() => {
   }
 });
 
-//FUNCIÓN BUSCAR POKÉMON POR NOMBRE
-document.getElementById('searchPoke').addEventListener('click', () => {
-  document.getElementById('box').innerHTML = '';
-  const pokeName = document.getElementById('searchBar').value;
-  const textPokeName = pokeName.charAt(0).toUpperCase() + pokeName.slice(1).toLowerCase();
-  let insertName = searchPoke(pokeData,textPokeName);
-  for (let i = 0; i < insertName.length; i++){
-     document.getElementById('box').innerHTML += 
-    `<div class="card"><h3 class="pokeNumber">${insertName[i].num}</h3>
-                      <img src="${insertName[i].img}" class="clickImg">
-                      <p class="pokeName">${insertName[i].name}</p</div>`;
-                      pokeModal(insertName);
-                      
-  }
-});
