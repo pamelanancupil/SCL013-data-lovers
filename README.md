@@ -24,8 +24,8 @@ Se realizaron entrevistas a diferentes jugadores, y surgieron las siguientes His
 1.  Yo, Paula, jugadora de Pokémon Go, quiero ver la imagen de cada Pokémon, para conocer su aspecto.
 2.  Yo, Vanessa, jugadora de Pokémon Go, quiero ver los tipos de Pokémones de la región de Kanto, para conocer sus nombres.
 3.  Yo, Alan, jugador de Pokémon Go, quiero ver información detallada de los Pokémones de la región de Kanto, para conocer sus características.
-4.  Yo, Paulo, jugador de Pokémon Go, quiero poder filtrar los huevos Pokémon por distancia, (2km, 5km, 10km o 20km), para saber cuál podría estar incubando.
-5.  Yo, Vicente, jugador de Pokémon Go, quiero buscar mi Pokémon por nombre o número, para conocer más sobre el.
+4.  Yo, Paulo, jugador de Pokémon Go, quiero poder filtrar los huevos Pokémon por distancia, (2km, 5km, 7km o 10km), para saber cuál podría estar incubando.
+5.  Yo, Vicente, jugador de Pokémon Go, quiero buscar mi Pokémon por nombre, para conocer más sobre el.
 6.  Yo, Angelo, jugador de Pokémon Go, quiero ver la cantidad de caramelos que necesita mi Pokémon para saber con cuantos va a evolucionar. 
 
 ## 3. Proceso de diseño
