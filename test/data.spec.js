@@ -6,6 +6,23 @@ searchPoke,
 sortHeight
 } from '../src/data.js';
 
+const dataType = [{
+  "name": "Charmander",
+  "type": [
+    "Fire"
+  ]
+}]
+
+const dataEgg = [{
+  "name": "Bulbasaur",
+  "egg": "2 km"
+}]
+
+const dataCandy = [{
+  "name": "Ivysaur",
+  "candy_count": 100
+}]
+
 const data = [{
   "name": "Bulbasaur",
   "type": [
@@ -43,8 +60,13 @@ test('is a function', () => {
     expect(typeof filterType).toBe('function');
   });
 
-      test('should return [["Grass","Poison"],["Grass","Poison"],["Grass","Poison"]] for filter "type"', () => {
-        expect(filterType(data,"type")).toEqual([["Grass","Poison"],["Grass","Poison"],["Grass","Poison"]]);
+      test('should return "Fire" for filter "type"', () => {
+        expect(filterType(dataType,"Fire")).toEqual([{
+          "name": "Charmander",
+          "type": [
+            "Fire"
+          ]
+        }]);
       });
     })
 
@@ -56,8 +78,11 @@ describe('filterEgg', () => {
     expect(typeof filterEgg).toBe('function');
    });
      
-   test('should return ["2 km"] for filter "egg"', () => {
-     expect(filterEgg(data,"egg")).toEqual(["2 km"]);
+   test('should return "2 km" for filter "egg"', () => {
+     expect(filterEgg(dataEgg,"2 km")).toEqual([{
+      "name": "Bulbasaur",
+      "egg": "2 km"
+    }]);
       });
       });
 
@@ -69,8 +94,11 @@ describe('filterCandy', () => {
    expect(typeof filterCandy).toBe('function');
   });
     
-  test('should return ["25"] for filter "candy"', () => {
-    expect(filterCandy(data,"candy")).toEqual(["25"]);
+  test('should return "100" for filter "candy"', () => {
+    expect(filterCandy(dataCandy,"100")).toEqual([{
+      "name": "Ivysaur",
+      "candy_count": 100
+    }]);
      });
      });
 
@@ -95,20 +123,68 @@ describe('sortHeight', () => {
     expect(typeof sortHeight).toBe('function');
    });
      
-   test('should return [["2.01 m"],["0.99 m"],["0.71 m"]] for order "height"', () => {
-     expect(sortHeight(data,"height")).toEqual([["2.01 m"],["0.99 m"],["0.71 m"]] );
+   test('should return "lowHight" for order "height"', () => {
+     expect(sortHeight(data,"height","lowHigh")).toEqual([{
+      "name": "Bulbasaur",
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      "height": "0.71 m",
+      "candy_count": 25,
+        "egg": "2 km",
+    
+    }, {
+      "name": "Ivysaur",
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      "height": "0.99 m",
+      "candy_count": 100,
+      "egg": "Not in Eggs",
+    },{
+      "name": "Venusaur",
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      "height": "2.01 m",
+      "egg": "Not in Eggs",
+    }]);
       });
       });
 
-        
-        
-   /* , anotherExample 
-describe('anotherExample', () => {
-  test('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  test('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});*/
+describe('sortHeight', () => {
+           
+         test('should return "highLow" for order "height"', () => {
+           expect(sortHeight(data,"height","highLow")).toEqual([{
+            "name": "Bulbasaur",
+            "type": [
+              "Grass",
+              "Poison"
+            ],
+            "height": "0.71 m",
+            "candy_count": 25,
+              "egg": "2 km",
+          
+          }, {
+            "name": "Ivysaur",
+            "type": [
+              "Grass",
+              "Poison"
+            ],
+            "height": "0.99 m",
+            "candy_count": 100,
+            "egg": "Not in Eggs",
+          },{
+            "name": "Venusaur",
+            "type": [
+              "Grass",
+              "Poison"
+            ],
+            "height": "2.01 m",
+            "egg": "Not in Eggs",
+          }].reverse());
+            });
+            });
