@@ -103,6 +103,7 @@ const select = document.getElementById('selectPokeType');
 select.addEventListener('change', () => {
   document.getElementById('box').innerHTML = '';
   const pokeFilter = select.options[select.selectedIndex].value;
+  document.getElementById('box').innerHTML =`<div class="subtitle"><h2>Tipos de Pokémon</h2></div>`
   let pokeByType = '';
   if(pokeFilter === ''){
     pokeByType = pokeData;
@@ -126,6 +127,7 @@ const selectedEgg = document.getElementById('selectPokeEgg');
 selectedEgg.addEventListener('change', () => {
   document.getElementById('box').innerHTML = '';
   const pokeFilter = selectedEgg.options[selectedEgg.selectedIndex].value;
+  document.getElementById('box').innerHTML =`<div class="subtitle"><h2>Huevos: Cantidad de km para incubar</h2></div>`
   let pokeByEgg = '';
   if(pokeFilter === ''){
     pokeByEgg = pokeData;
@@ -137,7 +139,7 @@ selectedEgg.addEventListener('change', () => {
     `<div class="card"><h3 class="pokeNumber">${pokeByEgg[i].num}</h3>
                       <img src="${pokeByEgg[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByEgg[i].name}</p>
-                      <p>${pokeByEgg[i].egg} para incubar</p></div>`;
+                      <p>${pokeByEgg[i].egg}</p></div>`;
                       pokeModal(pokeByEgg);
                       }
   }
@@ -148,6 +150,7 @@ const selectedCandy = document.getElementById('selectPokeCandy');
 selectedCandy.addEventListener('change', () => {
   document.getElementById('box').innerHTML = '';
   const pokeFilter = selectedCandy.options[selectedCandy.selectedIndex].value;
+  document.getElementById('box').innerHTML =`<div class="subtitle"><h2>Caramelos: Cantidad para evolucionar</h2></div>`
   let pokeByCandy = '';
   if(pokeFilter === ''){
     pokeByCandy = pokeData;
@@ -159,7 +162,7 @@ selectedCandy.addEventListener('change', () => {
     `<div class="card"><h3 class="pokeNumber">${pokeByCandy[i].num}</h3>
                       <img src="${pokeByCandy[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByCandy[i].name}</p>
-                      <p>${pokeByCandy[i].candy_count} para evolucionar</p></div>`;
+                      <p>${pokeByCandy[i].candy_count} caramelos</p></div>`;
                       pokeModal(pokeByCandy);
                       }
   }
@@ -187,6 +190,7 @@ pokeNumbers.addEventListener ('change',() => {
   const pokeValueHeight = document.getElementById ('selectPokeHeight').value;
   const finalSortHeight = sortHeight(pokeData, 'height', pokeValueHeight);
   document.getElementById('box').innerHTML = '';
+  document.getElementById('box').innerHTML =`<div class="subtitle"><h2>Altura según Pokémon</h2></div>`
   for (let i = 0; i < finalSortHeight.length; i++) {
     document.getElementById('box').innerHTML += 
     `<div class="card">

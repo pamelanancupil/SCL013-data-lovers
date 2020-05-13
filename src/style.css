@@ -145,6 +145,12 @@
     margin:120px 60px 0 60px;
     width: auto;
    }
+
+   .subtitle{
+    padding:30px 0 10px 0; 
+    width: 91%;
+  }
+
   #titlePokedex{
     background-color:whitesmoke;
     display:flex;
@@ -154,6 +160,7 @@
   #titlePokedex h1{
     color:#15192A;
     font-size:24px;
+    margin: 13px 0 10px 0;
     cursor:pointer;  
   }
   
@@ -376,10 +383,19 @@ line-height:22px;
     justify-content:space-between;
   }
 
+@media screen and (max-width: 980px){
+    .subtitle{
+       width: 90%;
+      }
+  }
+
 @media screen and (max-width: 840px){
     .menu{
       flex-direction:column;
       height:auto;
+    }
+    #pokedex{
+      display:block;
     }
     h1{
       font-size: 28px;
@@ -390,7 +406,19 @@ line-height:22px;
     .secondaryText p{
     font-size: 20px;
     }
-  #box .card{
+    .filter{
+      width:170px;
+      font-size:18px;
+    }
+    #pokeFilters{
+    width: auto;
+    display:block;
+    flex-direction:row;
+    }
+    #box{
+      margin:30px 60px 0 60px;
+    }
+    #box .card{
       flex-direction:column;
     }
   }
@@ -491,14 +519,18 @@ line-height:22px;
       flex-direction:row;
       margin: 120px 15px 0 65px;
     }
-  #titlePokedex h1{
+    .subtitle{
+      width: 50%;
+      font-size:small;
+     }
+    #titlePokedex h1{
     margin: 0 28px 0 0;
-  }
+    }
     #box{
       margin:auto;
       width:100%;
     }
-
+    
   .cardModal{
     display:flex;
     flex-direction:column;
@@ -511,7 +543,7 @@ line-height:22px;
     width: 280px;
     margin:120px auto;
    }
-   
+
    .frontLine  p{
    font-size: small;
    line-height:15px;
