@@ -390,6 +390,26 @@ line-height:22px;
    transition: .2s ease;
 }
 
+.imgUp{
+  display:inline-block;
+  cursor: pointer;
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  width:50px;
+  z-index:-1;
+  transition: .2s;
+}
+
+.show{
+z-index:10;
+}  
+
+.show .imgUp{
+transition: .2s;
+z-index:11;
+}
+
 .footer{
   display:flex;
   flex-flow:column nowrap;
