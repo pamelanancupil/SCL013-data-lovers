@@ -259,3 +259,18 @@ return "10 km"
 return "No presenta"
 }
 }
+
+// FUNCIÓN BOTÓN UP
+window.onscroll= function(){
+  if(document.documentElement.scrollTop>100){
+    document.querySelector(".imgUp").classList.add("show");
+  }else{
+    document.querySelector(".imgUp").classList.remove("show");
+  }
+  }
+  document.querySelector(".imgUp").addEventListener("click",()=>{
+    window.scrollTo({
+      top:0,
+      behavior: "smooth"
+    });
+  });
