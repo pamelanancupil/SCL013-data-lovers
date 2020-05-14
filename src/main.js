@@ -60,7 +60,7 @@ function pokeModal(pokeData){
   <div class="frontLine">
   <div class="weightModal"><p class="weight"><strong>${pokeData[i].weight}<br></strong>Peso</p></div>
   <div class="vertical-line"></div>
-  <div class="typeModal"><p class="type"><strong>${pokeData[i].type}<br></strong>Tipo</p></div>
+  <div class="typeModal"><p class="type"><strong>${translate(pokeData[i].type)}<br></strong>Tipo</p></div>
   <div class="vertical-line"></div>
   <div class="heightModal"><p class="height"><strong>${pokeData[i].height}<br></strong>Altura</p></div>
   </div>
@@ -68,14 +68,14 @@ function pokeModal(pokeData){
   <div class="horizontal-line"></div>
   
   <div class="secondLine">
-  <div class= "eggDesign"><p class="egg"><img src="img/egg.png" width="15px"><strong> ${pokeData[i].egg}</strong><br>Huevos</p></div>
+  <div class= "eggDesign"><p class="egg"><img src="img/egg.png" width="15px"><strong> ${translateEgg(pokeData[i].egg)}</strong><br>Huevos</p></div>
   <div class= "candyDesign"><p class="candyCount"><strong><img src="img/candy.png" width="15px"> ${pokeData[i].candy_count ? pokeData[i].candy_count : "Máx.Evolución" }</strong><br>${pokeData[i].candy}</p>
   </div>
   </div>
   
   <div class="thirdLine">
   <p class="evolution"><strong>${pokeData[i].next_evolution ? pokeData[i].next_evolution[0].name : "Sin más"}</strong><br>Evolución</p>
-  <p class="weaknesses"><strong>${pokeData[i].weaknesses}</strong><br>Debilidades</p>
+  <p class="weaknesses"><strong>${translate(pokeData[i].weaknesses)}</strong><br>Debilidades</p>
   </div>
   
   <div class="btnOk">OK</div>
@@ -116,7 +116,7 @@ select.addEventListener('change', () => {
     `<div class="card"><h3 class="pokeNumber">${pokeByType[i].num}</h3>
                       <img src="${pokeByType[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByType[i].name}</p>
-                      <p>${pokeByType[i].type}</p></div>`;
+                      <p>${translate(pokeByType[i].type)}</p></div>`;
                       pokeModal(pokeByType);
                       }
   }
@@ -139,7 +139,7 @@ selectedEgg.addEventListener('change', () => {
     `<div class="card"><h3 class="pokeNumber">${pokeByEgg[i].num}</h3>
                       <img src="${pokeByEgg[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByEgg[i].name}</p>
-                      <p>${pokeByEgg[i].egg}</p></div>`;
+                      <p>${translateEgg(pokeByEgg[i].egg)}</p></div>`;
                       pokeModal(pokeByEgg);
                       }
   }
@@ -202,3 +202,60 @@ pokeNumbers.addEventListener ('change',() => {
   }
 });
 
+// FUNCIÓN TRADUCIR TIPOS Y DEBILIDADES
+function translate(pokeData){
+  let spanish= [];
+  for(let i=0; i<pokeData.length;i++){
+    if(pokeData[i] == ["Fire"]){
+      spanish.push(["Fuego"]);
+    }else if (pokeData[i] == ["Water"]){
+      spanish.push(["Agua"]);
+    }else if (pokeData[i] == ["Grass"]){
+      spanish.push(["Planta"]);
+    }else if (pokeData[i] == ["Electric"]){
+      spanish.push(["Eléctrico"]);
+    }else if (pokeData[i] == ["Ice"]){
+      spanish.push(["Hielo"]);
+    }else if (pokeData[i] == ["Fighting"]){
+      spanish.push(["Lucha"]);
+    }else if (pokeData[i] == ["Poison"]){
+      spanish.push(["Veneno"]);
+    }else if (pokeData[i] == ["Ground"]){
+      spanish.push(["Tierra"]);      
+    }else if (pokeData[i] == ["Flying"]){
+      spanish.push(["Volador"]);
+    }else if (pokeData[i] == ["Psychic"]){
+      spanish.push(["Psíquico"]);     
+    }else if (pokeData[i] == ["Bug"]){
+      spanish.push(["Bicho"]);
+    }else if (pokeData[i] == ["Rock"]){
+      spanish.push(["Roca"]);
+    }else if (pokeData[i] == ["Ghost"]){
+      spanish.push(["Fantasma"]);
+    }else if (pokeData[i] == ["Dragon"]){
+      spanish.push(["Dragón"]);
+    }else if (pokeData[i] == ["Normal"]){
+      spanish.push(["Normal"]);
+    }else if (pokeData[i] == ["Dark"]){
+      spanish.push(["Siniestro"]);
+      }else if (pokeData[i] == ["Steel"]){
+      spanish.push(["Acero"]);   
+  }else {
+    spanish.push(["Sin traducción"]);
+  } 
+}
+  return spanish;
+}
+
+// FUNCIÓN TRADUCIR HUEVOS
+function translateEgg(pokeData){
+if (pokeData == "2 km"){
+return "2 km"
+}else if (pokeData == "5 km"){
+return "5 km"
+}else if (pokeData == "10 km"){
+return "10 km"
+}else{
+return "No presenta"
+}
+}
