@@ -216,7 +216,7 @@
   background:#FFFFFF;
   border: 6px solid #FFFFFF;
   box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.50);
   border-radius: 26px;
   float: left ;
   margin:22px;
@@ -224,7 +224,7 @@
   }
 
   .card:hover{
-  box-shadow: 0px 6px 6px rgba(26, 197, 146, 0.712);
+  box-shadow: 0px 4px 6px rgba(26, 197, 146, 0.712);
   }
 
   .pokeNumber{

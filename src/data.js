@@ -37,7 +37,7 @@ export const sortHeight = (pokeData, sortBy, sortOrder) => {
  if (sortOrder === 'lowHigh') {
    return compare;
  }
- if (sortOrder === 'highLow') {
+ else{
    return compare.reverse();
  }
 };
