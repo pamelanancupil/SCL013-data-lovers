@@ -36,14 +36,12 @@ showPokedex(pokeData);
 //MODAL POKÉMON
 function pokeModal(pokeData){
   let backgroundPokeModal= document.getElementById("backgroundModal");
-  //let contentPokeModal= document.getElementById("contentModal");
   let clickPokeImg = document.getElementsByClassName("clickImg");
   
   backgroundPokeModal.style.display="none";
   
   for(let i=0; i<clickPokeImg.length; i++){
   let pokeImg = clickPokeImg[i];
-  //let evolution = pokeData[i].next_evolution[i].name;
   pokeImg.addEventListener("click",() =>{
   let contentPokeModal= document.getElementById("backgroundModal");
   contentPokeModal.innerHTML="";
