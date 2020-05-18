@@ -22,12 +22,16 @@ document.getElementById("refresh").addEventListener("click", ()=>{
 //DATA INICIAL
 const container = document.getElementById("box");
 const pokeData = data.pokemon;
+
+function showPokedex(pokeData){
 for(let i=0; i<pokeData.length;i++){
   container.innerHTML +=`<div class="card"><h3 class="pokeNumber">${pokeData[i].num}</h3>
                         <img src="${pokeData[i].img}" class="clickImg">
                         <p class="pokeName">${pokeData[i].name}</p></div>`;
                         pokeModal(pokeData);
   }
+}
+showPokedex(pokeData);
 
 //MODAL POKÉMON
 function pokeModal(pokeData){
