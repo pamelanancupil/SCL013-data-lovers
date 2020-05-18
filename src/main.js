@@ -35,17 +35,16 @@ showPokedex(pokeData);
 
 //MODAL POKÉMON
 function pokeModal(pokeData){
-  let backgroundPokeModal= document.getElementById("backgroundModal");
+  let contentPokeModal= document.getElementById("backgroundModal");
   let clickPokeImg = document.getElementsByClassName("clickImg");
   
-  backgroundPokeModal.style.display="none";
+  contentPokeModal.style.display="none";
   
   for(let i=0; i<clickPokeImg.length; i++){
   let pokeImg = clickPokeImg[i];
   pokeImg.addEventListener("click",() =>{
-  let contentPokeModal= document.getElementById("backgroundModal");
   contentPokeModal.innerHTML="";
-  backgroundPokeModal.style.display="block";
+  contentPokeModal.style.display="block";
   
   contentPokeModal.innerHTML += 
   `<div class="cardModal">
@@ -87,13 +86,13 @@ function pokeModal(pokeData){
   
   let close = document.getElementsByClassName("closeCard")[0];
   close.addEventListener("click",()=> {
-  backgroundPokeModal.style.display="none";
+  contentPokeModal.style.display="none";
   contentPokeModal.innerHTML="";
   });
   
   let btnOkPoke = document.getElementsByClassName("btnOk")[0];
   btnOkPoke.addEventListener("click",()=> {
-  backgroundPokeModal.style.display="none";
+  contentPokeModal.style.display="none";
   contentPokeModal.innerHTML="";
   });
   });
@@ -103,9 +102,9 @@ function pokeModal(pokeData){
 // FUNCIÓN FILTRAR POR TIPO DE POKÉMON
 const select = document.getElementById('selectPokeType');
 select.addEventListener('change', () => {
-  document.getElementById('box').innerHTML = '';
+  container.innerHTML = '';
   const pokeFilter = select.options[select.selectedIndex].value;
-  document.getElementById('box').innerHTML =`<div class="subtitle"><h2>Tipos de Pokémon</h2></div>`
+  container.innerHTML =`<div class="subtitle"><h2>Tipos de Pokémon</h2></div>`
   let pokeByType = '';
   if(pokeFilter === ''){
     pokeByType = pokeData;
@@ -114,7 +113,7 @@ select.addEventListener('change', () => {
     pokeByType= filterType(pokeData,pokeFilter);
 
   for (let i = 0; i < pokeByType.length; i++) {
-    document.getElementById('box').innerHTML += 
+    container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByType[i].num}</h3>
                       <img src="${pokeByType[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByType[i].name}</p>
@@ -127,9 +126,9 @@ select.addEventListener('change', () => {
 // FUNCIÓN FILTRAR POR HUEVOS
 const selectedEgg = document.getElementById('selectPokeEgg');
 selectedEgg.addEventListener('change', () => {
-  document.getElementById('box').innerHTML = '';
+  container.innerHTML = '';
   const pokeFilter = selectedEgg.options[selectedEgg.selectedIndex].value;
-  document.getElementById('box').innerHTML =`<div class="subtitle"><h2>Huevos: Cantidad de km para incubar</h2></div>`
+  container.innerHTML =`<div class="subtitle"><h2>Huevos: Cantidad de km para incubar</h2></div>`
   let pokeByEgg = '';
   if(pokeFilter === ''){
     pokeByEgg = pokeData;
@@ -137,7 +136,7 @@ selectedEgg.addEventListener('change', () => {
   else{
     pokeByEgg = (filterEgg(pokeData,pokeFilter));
   for (let i = 0; i < pokeByEgg.length; i++) {
-    document.getElementById('box').innerHTML += 
+    container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByEgg[i].num}</h3>
                       <img src="${pokeByEgg[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByEgg[i].name}</p>
@@ -150,9 +149,9 @@ selectedEgg.addEventListener('change', () => {
 // FUNCIÓN FILTRAR POR CARAMELOS
 const selectedCandy = document.getElementById('selectPokeCandy');
 selectedCandy.addEventListener('change', () => {
-  document.getElementById('box').innerHTML = '';
+  container.innerHTML = '';
   const pokeFilter = selectedCandy.options[selectedCandy.selectedIndex].value;
-  document.getElementById('box').innerHTML =`<div class="subtitle"><h2>Caramelos: Cantidad para evolucionar</h2></div>`
+  container.innerHTML =`<div class="subtitle"><h2>Caramelos: Cantidad para evolucionar</h2></div>`
   let pokeByCandy = '';
   if(pokeFilter === ''){
     pokeByCandy = pokeData;
@@ -160,7 +159,7 @@ selectedCandy.addEventListener('change', () => {
   else{
     pokeByCandy = (filterCandy(pokeData,pokeFilter));
   for (let i = 0; i < pokeByCandy.length; i++) {
-    document.getElementById('box').innerHTML += 
+    container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByCandy[i].num}</h3>
                       <img src="${pokeByCandy[i].img}" class="clickImg">
                       <p class="pokeName">${pokeByCandy[i].name}</p>
@@ -172,12 +171,12 @@ selectedCandy.addEventListener('change', () => {
 
 //FUNCIÓN BUSCAR POKÉMON POR NOMBRE
 document.getElementById('searchPoke').addEventListener('click', () => {
-  document.getElementById('box').innerHTML = '';
+  container.innerHTML = '';
   const pokeName = document.getElementById('searchBar').value;
   const textPokeName = pokeName.charAt(0).toUpperCase() + pokeName.slice(1).toLowerCase();
   let insertName = searchPoke(pokeData,textPokeName);
   for (let i = 0; i < insertName.length; i++){
-     document.getElementById('box').innerHTML += 
+    container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${insertName[i].num}</h3>
                       <img src="${insertName[i].img}" class="clickImg">
                       <p class="pokeName">${insertName[i].name}</p</div>`;
@@ -187,20 +186,20 @@ document.getElementById('searchPoke').addEventListener('click', () => {
 });
 
 // FUNCIÓN ORDENAR POR ALTURA
-const pokeNumbers = document.getElementById ('selectPokeHeight');
-pokeNumbers.addEventListener ('change',() => {
-  const pokeValueHeight = document.getElementById ('selectPokeHeight').value;
-  const finalSortHeight = sortHeight(pokeData, 'height', pokeValueHeight);
-  document.getElementById('box').innerHTML = '';
-  document.getElementById('box').innerHTML =`<div class="subtitle"><h2>Altura según Pokémon</h2></div>`
-  for (let i = 0; i < finalSortHeight.length; i++) {
-    document.getElementById('box').innerHTML += 
+const selectedHeight = document.getElementById ('selectPokeHeight');
+selectedHeight.addEventListener ('change',() => { 
+  container.innerHTML = '';
+  const pokeValueHeight = selectedHeight.options[selectedHeight.selectedIndex].value;
+  container.innerHTML =`<div class="subtitle"><h2>Altura según Pokémon</h2></div>`
+  const pokeByHeight = sortHeight(pokeData, 'height', pokeValueHeight);
+  for (let i = 0; i < pokeByHeight.length; i++){
+    container.innerHTML += 
     `<div class="card">
-    <h3 class="pokeNumber">${finalSortHeight[i].num}</h3>
-    <img src="${finalSortHeight[i].img}" class="clickImg">
-    <p><strong>${finalSortHeight[i].name}</strong></p>
-    <p>${finalSortHeight[i].height} de altura</p></div>`;
-    pokeModal(finalSortHeight);
+    <h3 class="pokeNumber">${pokeByHeight[i].num}</h3>
+    <img src="${pokeByHeight[i].img}" class="clickImg">
+    <p><strong>${pokeByHeight[i].name}</strong></p>
+    <p>${pokeByHeight[i].height} de altura</p></div>`;
+    pokeModal(pokeByHeight);
   }
 });
 
