@@ -33,7 +33,7 @@ for(let i=0; i<pokeData.length;i++){
 }
 showPokedex(pokeData);
 
-//MODAL POKÉMON
+//FUNCIÓN MODAL POKÉMON
 function pokeModal(pokeData){
   let contentPokeModal= document.getElementById("backgroundModal");
   let clickPokeImg = document.getElementsByClassName("clickImg");
@@ -106,12 +106,7 @@ select.addEventListener('change', () => {
   const pokeFilter = select.options[select.selectedIndex].value;
   container.innerHTML =`<div class="subtitle"><h2>Tipos de Pokémon</h2></div>`
   let pokeByType = '';
-  if(pokeFilter === ''){
-    pokeByType = pokeData;
-  }
-  else{
-    pokeByType= filterType(pokeData,pokeFilter);
-
+  (pokeFilter === '') ? pokeByType = pokeData : pokeByType= filterType(pokeData,pokeFilter);
   for (let i = 0; i < pokeByType.length; i++) {
     container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByType[i].num}</h3>
@@ -120,7 +115,6 @@ select.addEventListener('change', () => {
                       <p>${translate(pokeByType[i].type)}</p></div>`;
                       pokeModal(pokeByType);
                       }
-  }
 });
 
 // FUNCIÓN FILTRAR POR HUEVOS
@@ -130,11 +124,8 @@ selectedEgg.addEventListener('change', () => {
   const pokeFilter = selectedEgg.options[selectedEgg.selectedIndex].value;
   container.innerHTML =`<div class="subtitle"><h2>Huevos: Cantidad de km para incubar</h2></div>`
   let pokeByEgg = '';
-  if(pokeFilter === ''){
-    pokeByEgg = pokeData;
-  }
-  else{
-    pokeByEgg = (filterEgg(pokeData,pokeFilter));
+  (pokeFilter === '') ? pokeByEgg = pokeData : pokeByEgg = (filterEgg(pokeData,pokeFilter)); 
+  pokeByEgg = (filterEgg(pokeData,pokeFilter));
   for (let i = 0; i < pokeByEgg.length; i++) {
     container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByEgg[i].num}</h3>
@@ -143,7 +134,6 @@ selectedEgg.addEventListener('change', () => {
                       <p>${translateEgg(pokeByEgg[i].egg)}</p></div>`;
                       pokeModal(pokeByEgg);
                       }
-  }
 });
 
 // FUNCIÓN FILTRAR POR CARAMELOS
@@ -153,11 +143,7 @@ selectedCandy.addEventListener('change', () => {
   const pokeFilter = selectedCandy.options[selectedCandy.selectedIndex].value;
   container.innerHTML =`<div class="subtitle"><h2>Caramelos: Cantidad para evolucionar</h2></div>`
   let pokeByCandy = '';
-  if(pokeFilter === ''){
-    pokeByCandy = pokeData;
-  }
-  else{
-    pokeByCandy = (filterCandy(pokeData,pokeFilter));
+  (pokeFilter === '') ? pokeByCandy = pokeData : pokeByCandy = (filterCandy(pokeData,pokeFilter));
   for (let i = 0; i < pokeByCandy.length; i++) {
     container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByCandy[i].num}</h3>
@@ -166,7 +152,6 @@ selectedCandy.addEventListener('change', () => {
                       <p>${pokeByCandy[i].candy_count} caramelos</p></div>`;
                       pokeModal(pokeByCandy);
                       }
-  }
 });
 
 //FUNCIÓN BUSCAR POKÉMON POR NOMBRE
