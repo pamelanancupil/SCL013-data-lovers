@@ -16,7 +16,7 @@
 
 Pokémon GO es un sitio web inspirado en el juego del mismo nombre, el cual ayudará a los jugadores a encontrar información relevante sobre los Pokémon y así poder progresar en su juego. 
 El sitio web esta enfocado principalmente a personas que tengan un conocimiento previo de la aplicación y los términos de esta.
-Tras la realización de entrevistas a usuarios recurrentes de Pokémon GO, se determinó que el principal problema de los jugadores era la falta de información específica de los Pokémon en general y no solo de los que se encuentran en su Pokédex, por esto se llegó a la conclusión que la manera más sencilla de conocer las características de los Pokémon era mediante filtros, por lo que se decidió incorporar los siguientes; tipos, huevos, caramelos y tamaño.   
+Tras la realización de entrevistas a usuarios recurrentes de Pokémon GO, se determinó que el principal problema de los jugadores era la falta de información específica de los Pokémon en general y no solo de los que se encuentran en su Pokédex, por esto se llegó a la conclusión que la manera más sencilla de conocer las características de los Pokémon era mediante filtros, por lo que se decidió incorporar los siguientes; tipos, huevos, caramelos y altura.   
 
 ## 2. Historias de usuario
 
@@ -25,7 +25,7 @@ Se realizaron entrevistas a diferentes jugadores, y surgieron las siguientes His
 1.  Yo, Paula, jugadora de Pokémon Go, quiero ver la imagen de cada Pokémon, para conocer su aspecto.
 2.  Yo, Vanessa, jugadora de Pokémon Go, quiero ver los tipos de Pokémones de la región de Kanto, para conocer sus nombres.
 3.  Yo, Alan, jugador de Pokémon Go, quiero ver información detallada de los Pokémones de la región de Kanto, para conocer sus características.
-4.  Yo, Paulo, jugador de Pokémon Go, quiero poder filtrar los huevos Pokémon por distancia, (2km, 5km, 7km o 10km), para saber cuál podría estar incubando.
+4.  Yo, Paulo, jugador de Pokémon Go, quiero poder filtrar los huevos Pokémon por distancia, (2km, 5km y 10km), para saber cuál podría estar incubando.
 5.  Yo, Vicente, jugador de Pokémon Go, quiero buscar mi Pokémon por nombre, para conocer más sobre el.
 6.  Yo, Angelo, jugador de Pokémon Go, quiero ver la cantidad de caramelos que necesita mi Pokémon para saber con cuantos va a evolucionar. 
 
@@ -62,9 +62,9 @@ Se entrevistó a 5 jugadores de Pokémon GO para testear el boceto de alta fidel
 
 2.  Paulo Dávalos, 32 años, tras realizar el testeo, Paulo nos indicó que era un sitio intuitivo, fácil de usar y coherente con la línea gráfica del juego, señaló que las características de los Pokémon estaban bien, pero los subtítulos le parecieron poco claros y sugirió el siguiente para el ítem de “caramelos” : “Cantidad de caramelos para evolucionar”.
 
-3.  Paula Flores, 26 años, tras realizar el testeo, Paula nos indicó que el sitio web le pareció fácil de utilizar, limpio y se le hacía sencillo encontrar la información que necesitaba; pudo realizar las tareas indicadas, y nos otorgó el siguiente feedback, nos sugirió incorporar un nuevo filtro para ordenar los Pokémones de acuerdo a su tamaño, también nos indico que en las fichas, el items “huevos”, podía ir separado de debilidades y resistencias.
+3.  Paula Flores, 26 años, tras realizar el testeo, Paula nos indicó que el sitio web le pareció fácil de utilizar, limpio y se le hacía sencillo encontrar la información que necesitaba; pudo realizar las tareas indicadas, y nos otorgó el siguiente feedback, nos sugirió incorporar un nuevo filtro para ordenar los Pokémones de acuerdo a su altura, también nos indico que en las fichas, el items “huevos”, podía ir separado de debilidades y resistencias.
 
-4.  Daniel Flores, 29 años, tras realizar el testeo, Daniel nos indicó que el sitio web le pareció atractivo, limpio e intuitivo y consideró que un filtro que ordenara los Pokémon según tamaño le parecería bien.  
+4.  Daniel Flores, 29 años, tras realizar el testeo, Daniel nos indicó que el sitio web le pareció atractivo, limpio e intuitivo y consideró que un filtro que ordenara los Pokémon según altura le parecería bien.  
 
 5.  Alan Schaeffer, 18 años, tras realizar el testeo, Alan nos indicó que el sitio web estaba ordenado y fácil de entender, pudo realizar las tareas indicadas, pero le pareció un poco confuso el título de “caramelos” y nos sugirió mayor claridad en esa información.
 
@@ -72,7 +72,7 @@ Tras la realización de estos test se realizó la siguiente lista de problemas p
 
 * El color del header es poco dinámico.
 * Los subtítulos deben reforzar el nombre de los filtros, por ejemplo en “caramelos” utilizar el subtitulo de “Cantidad de caramelos para evolucionar”. 
-* Falta un filtro que ayude a ordenar los Pokémones de acuerdo a su tamaño.
+* Falta un filtro que ayude a ordenar los Pokémones de acuerdo a su altura.
 * En las fichas de cada Pokémon el ítem "huevo" debe ir separado de debilidades y resistencia. 
 
 ## 6. Proyecto finalizado

@@ -125,7 +125,6 @@ selectedEgg.addEventListener('change', () => {
   container.innerHTML =`<div class="subtitle"><h2>Huevos: Cantidad de km para incubar</h2></div>`
   let pokeByEgg = '';
   (pokeFilter === '') ? pokeByEgg = pokeData : pokeByEgg = (filterEgg(pokeData,pokeFilter)); 
-  pokeByEgg = (filterEgg(pokeData,pokeFilter));
   for (let i = 0; i < pokeByEgg.length; i++) {
     container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByEgg[i].num}</h3>
