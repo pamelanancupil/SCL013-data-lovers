@@ -25,8 +25,7 @@
     justify-content:space-around;
     height:120px;
     align-items:center;
-    
-  }
+    }
   .logo{
    flex:0.7 0 0;
    cursor:pointer;
@@ -48,10 +47,13 @@
   cursor:pointer;
   }
   #search i:hover{
-    color: rgb(26, 197, 146);/*cambio 13.05*/
+    color: rgb(26, 197, 146);
     transition: .2s ease;
   }
- 
+
+
+ /*Inicio pantalla Homepage*/
+
   #homePage{
     background:url(img/fondo-pokemon.jpg);
     background-position:center;
@@ -82,7 +84,6 @@
     justify-content:center;
     align-items:flex-start;
     align-content:flex-start;
-    
   }
   .welcomeImg img{
     flex:0 0 auto;
@@ -107,21 +108,18 @@
   line-height: 40px;
   text-align: center;
   }
-  /*Arregloboton*/
   .btn button:link{
     text-decoration:none;
   }
   .btn button{
     color:white;
   }
-
   .btn{
     display:flex;
     flex-direction:row;
     flex-wrap:nowrap;
     justify-content:center;
   }
-  
   #start{
     align-self:center;
     text-decoration:none;
@@ -135,7 +133,9 @@
     background: linear-gradient(90.3deg, #A2DB96 0.11%, #24CCA9 99.93%);
     transition: .2s ease;
 }
-  /*Pantalla Pokédex*/
+
+
+  /*Inicio pantalla Pokédex*/
 
   #pokedex{
     background-color:whitesmoke;
@@ -145,7 +145,6 @@
     height:auto;
     width: auto;
   }
-
   #pokeFilters{
     display:flex;
     flex-direction:column;
@@ -154,31 +153,26 @@
     margin:120px 60px 0 60px;
     width: auto;
    }
-
    .subtitle{
     padding:30px 0 10px 0; 
     width: 91%;
   }
-
   #titlePokedex{
     background-color:whitesmoke;
     display:flex;
     flex-direction:column;
     flex-wrap:wrap;
   }
-
   #titlePokedex h1{
     color:#15192A;
     font-size:24px;
     margin: 13px 0 10px 0;
     cursor:pointer;  
   }
-  
 #titlePokedex h1:hover{
     font-size:26px;
     transition: .2s ease;
 }
-
   .filter{
   font-family: 'Quicksand', sans-serif;
   font-size:15px;
@@ -190,17 +184,16 @@
   border:none;
   cursor:pointer;
   }
-
   .filter:hover{
     background: linear-gradient(90.3deg, #A2DB96 0.11%, #24CCA9 99.93%);
     transition: .2s ease;
 }
-
   option{
     background-color:#5D6379;
   }
 
-  /*CAJA QUE RECIBE A LOS POKEMON*/
+
+/*Caja que recibe los Pokémones*/
 
 #box{
   display: flex;
@@ -209,7 +202,9 @@
   margin:120px 60px 0 60px;
   min-height: calc(100vh - 120px - 100px);
   }
-  
+
+   /*Cartas Pokémon*/
+
   .card{
   width: 176px;
   height: 266px;
@@ -222,11 +217,9 @@
   margin:22px;
   cursor:pointer;
   }
-
   .card:hover{
   box-shadow: 0px 4px 6px rgba(26, 197, 146, 0.712);
   }
-
   .pokeNumber{
     color:white;
     text-align:center;
@@ -237,13 +230,11 @@
     box-sizing: border-box;
     border-radius: 15px;
     margin:auto;
-    }
-  
+    } 
   .card img{
     margin:10px 20px;
     width:70%;
-  }
-  
+  }  
   .pokeName{
     font-size: 20px;
     line-height: 25px;
@@ -261,9 +252,8 @@
       margin:0 27px;
       }   
 
-  /*FIN CAJA*/
   
-/*MODAL*/
+/*Diseño Modal*/
 
 .backgroundModal{
   background:rgba(0,0,0,0.5);
@@ -275,7 +265,6 @@
   left:0;
   right:0;
 }
-
 .cardModal{
   display:flex;
   flex-direction:column;
@@ -288,7 +277,6 @@
    width: 400px;
    margin:120px auto;
 }
-
 .closeCard{
  display:flex;
  color:#15192A;
@@ -296,15 +284,12 @@
  float:right;
  cursor:pointer;
 }
-
 .firstInfo{
 flex-direction:column;
 }
-
 .firstInfo p{
 color:#15192A;
 }
-
 .frontLine{
  display:inline-flex;
  flex-wrap:wrap;
@@ -312,7 +297,6 @@ color:#15192A;
  width: 100%;
  margin:12px auto;
  }
-
 .frontLine  p{
 flex-direction:row;
 justify-content:center;
@@ -322,7 +306,6 @@ padding:10px;
 margin: auto;
 line-height:20px;
 }
-
 .vertical-line{
 display:block;
 width: 0.25px;
@@ -331,13 +314,11 @@ height: 45px;
 position:relative;
 opacity:50%;
 }
-
 .horizontal-line{
 height: 0.25px;
 background-color: #15192A;
 opacity:50%;
 }
-
 .secondLine{
  display:flex;
  flex-wrap:wrap;
@@ -345,7 +326,6 @@ opacity:50%;
  width: 100%;
  margin:5px auto 0;
 }
-
 .secondLine p{
 flex-direction:row;
 justify-content:center;
@@ -355,14 +335,12 @@ padding:10px;
 margin: auto;
 line-height:20px;
 }
-
 .thirdLine{
  display:flex;
  flex-wrap:wrap;
  justify-content:space-around;
  width: 100%;
 }
-
 .thirdLine p{
 flex-direction:row;
 justify-content:center;
@@ -372,7 +350,6 @@ padding:10px;
 margin: auto;
 line-height:22px;
 }
-
 .btnOk{
   text-decoration:none;
    background:#15192A; 
@@ -384,11 +361,13 @@ line-height:22px;
    margin: 12px auto 28px;
    cursor:pointer;
 }
-
 .btnOk:hover{
    background: linear-gradient(90.3deg, #A2DB96 0.11%, #24CCA9 99.93%);
    transition: .2s ease;
 }
+
+
+/*Botón subir*/
 
 .imgUp{
   display:inline-block;
@@ -400,15 +379,16 @@ line-height:22px;
   z-index:-1;
   transition: .2s;
 }
-
 .show{
 z-index:10;
 }  
-
 .show .imgUp{
 transition: .2s;
 z-index:11;
 }
+
+
+/*Inicio Footer*/
 
 .footer{
   display:flex;
@@ -416,25 +396,21 @@ z-index:11;
   justify-content:center; 
   background-color: #15192A;
   height: 100px;
-  }
-  
+  } 
   .foot{
   display:flex;
   flex-direction:column;
   }
-  
   .foot p{
   color:white; 
   font-size: 15px;
   margin: 10px;
   }
-  
   .social{
   display: flex;
   flex-flow: row wrap;
   justify-content:center;
   }
-  
   .copyrirght{
   display: flex;
   flex-flow: row wrap;
@@ -445,22 +421,22 @@ z-index:11;
     margin: 0 10px;
     font-size: 50%;
   }
-  
   .insta a:hover{
    color:rgb(26, 197, 146);
      transition: .2s ease;
   }
-  
   .face a{
     color:white;
     margin: 0 10px;
     font-size: 50%;
   }
-  
   .face a:hover{
    color: rgb(26, 197, 146);
      transition: .2s ease;
   }
+
+
+/*Inicio Media Queries*/  
 
 @media screen and (max-width: 980px){
     .subtitle{
@@ -609,7 +585,6 @@ z-index:11;
       margin:auto;
       width:100%;
     }
-    
   .cardModal{
     display:flex;
     flex-direction:column;
@@ -622,7 +597,6 @@ z-index:11;
     width: 280px;
     margin:120px auto;
    }
-
    .frontLine  p{
    font-size: small;
    line-height:15px;
