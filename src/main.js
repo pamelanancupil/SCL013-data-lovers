@@ -104,9 +104,8 @@ const select = document.getElementById('selectPokeType');
 select.addEventListener('change', () => {
   container.innerHTML = '';
   const pokeFilter = select.options[select.selectedIndex].value;
-  container.innerHTML =`<div class="subtitle"><h2>Tipos de Pokémon</h2></div>`
-  let pokeByType = '';
-  (pokeFilter === '') ? pokeByType = pokeData : pokeByType= filterType(pokeData,pokeFilter);
+  container.innerHTML =`<div class="subtitle"><h2>Tipos de Pokémon</h2></div>`;
+  const pokeByType= filterType(pokeData,pokeFilter);
   for (let i = 0; i < pokeByType.length; i++) {
     container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByType[i].num}</h3>
@@ -122,9 +121,8 @@ const selectedEgg = document.getElementById('selectPokeEgg');
 selectedEgg.addEventListener('change', () => {
   container.innerHTML = '';
   const pokeFilter = selectedEgg.options[selectedEgg.selectedIndex].value;
-  container.innerHTML =`<div class="subtitle"><h2>Huevos: Cantidad de km para incubar</h2></div>`
-  let pokeByEgg = '';
-  (pokeFilter === '') ? pokeByEgg = pokeData : pokeByEgg = (filterEgg(pokeData,pokeFilter)); 
+  container.innerHTML =`<div class="subtitle"><h2>Huevos: Cantidad de km para incubar</h2></div>`;
+  const pokeByEgg = (filterEgg(pokeData,pokeFilter));
   for (let i = 0; i < pokeByEgg.length; i++) {
     container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByEgg[i].num}</h3>
@@ -140,9 +138,8 @@ const selectedCandy = document.getElementById('selectPokeCandy');
 selectedCandy.addEventListener('change', () => {
   container.innerHTML = '';
   const pokeFilter = selectedCandy.options[selectedCandy.selectedIndex].value;
-  container.innerHTML =`<div class="subtitle"><h2>Caramelos: Cantidad para evolucionar</h2></div>`
-  let pokeByCandy = '';
-  (pokeFilter === '') ? pokeByCandy = pokeData : pokeByCandy = (filterCandy(pokeData,pokeFilter));
+  container.innerHTML =`<div class="subtitle"><h2>Caramelos: Cantidad para evolucionar</h2></div>`;
+  const pokeByCandy = (filterCandy(pokeData,pokeFilter));
   for (let i = 0; i < pokeByCandy.length; i++) {
     container.innerHTML += 
     `<div class="card"><h3 class="pokeNumber">${pokeByCandy[i].num}</h3>
@@ -174,7 +171,7 @@ const selectedHeight = document.getElementById ('selectPokeHeight');
 selectedHeight.addEventListener ('change',() => { 
   container.innerHTML = '';
   const pokeValueHeight = selectedHeight.options[selectedHeight.selectedIndex].value;
-  container.innerHTML =`<div class="subtitle"><h2>Altura según Pokémon</h2></div>`
+  container.innerHTML =`<div class="subtitle"><h2>Altura según Pokémon</h2></div>`;
   const pokeByHeight = sortHeight(pokeData, 'height', pokeValueHeight);
   for (let i = 0; i < pokeByHeight.length; i++){
     container.innerHTML += 
